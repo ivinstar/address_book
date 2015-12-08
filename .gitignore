@@ -7,8 +7,11 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/database.yml
+/config/database.yml
+
+# RubyMine project files
+.idea
+
 
 # Ignore all logfiles and tempfiles.
 /log/*
