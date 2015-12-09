@@ -9,4 +9,6 @@ gem 'nokogiri', '1.6.0'
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 
+gem 'annotate'
+
 
