@@ -14,4 +14,10 @@
 #
 
 class Address < ActiveRecord::Base
+
+
+  def street
+    [self.street_name,self.street_type].join(', ')
+  end
+
 end
