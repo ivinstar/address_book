@@ -1,18 +1,25 @@
+= paginate @addresses
+
 %table.table.table-bordered.table-striped
   %thead
-    %th
-    %th= 'Страна'
-    %th= 'Город'
-    %th= 'Улица'
-    %th= 'Дом'
-    %th= 'Индекс'
-    %th= 'Дата'
-  - @addresses.each do |address|
-    %tbody
-      %td
-      %td= address.country
-      %td= address.city
-      %td= address.street
-      %td= address.house
-      %td= address.zipcode
-      %td= address.updated_at
+    %tr
+      %th
+      %th= 'Страна'
+      %th= 'Город'
+      %th= 'Улица'
+      %th= 'Дом'
+      %th= 'Индекс'
+      %th= 'Дата'
+  %tbody
+    - @addresses.each do |address|
+      %tr
+        %td= address.id
+        %td= address.country
+        %td= address.city
+        %td= address.street
+        %td= address.house
+        %td= address.zipcode
+        %td= address.date
+
+
+= paginate @addresses

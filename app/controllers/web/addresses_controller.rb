@@ -1,7 +1,7 @@
 class Web::AddressesController < Web::ApplicationController
 
   def index
-    @addresses = Address.limit(100)
+    @addresses = Address.page(params[:page]).per(30)
   end
 
 end

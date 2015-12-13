@@ -8,8 +8,11 @@ gem 'nokogiri', '1.6.0'
 
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails'
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 gem 'annotate'
+gem 'kaminari'
 
 

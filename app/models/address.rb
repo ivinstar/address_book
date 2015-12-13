@@ -14,10 +14,15 @@
 #
 
 class Address < ActiveRecord::Base
+  include GeneralRepository
 
 
   def street
     [self.street_name,self.street_type].join(', ')
+  end
+
+  def date
+    self.updated_at.utc.strftime('%d.%m.%Y %H:%M')
   end
 
 end
