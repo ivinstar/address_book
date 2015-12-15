@@ -1,25 +1,26 @@
+- content_for :ng_controller, 'addressesCtrl'
+
 = paginate @addresses
 
 %table.table.table-bordered.table-striped
   %thead
     %tr
       %th
-      %th= 'Страна'
-      %th= 'Город'
-      %th= 'Улица'
-      %th= 'Дом'
-      %th= 'Индекс'
-      %th= 'Дата'
+      %th= @model.human_attribute_name(:country)
+      %th= @model.human_attribute_name(:city)
+      %th= @model.human_attribute_name(:street)
+      %th= @model.human_attribute_name(:house)
+      %th= @model.human_attribute_name(:zipcode)
+      %th= @model.human_attribute_name(:date)
+    = render 'filter'
   %tbody
-    - @addresses.each do |address|
-      %tr
-        %td= address.id
-        %td= address.country
-        %td= address.city
-        %td= address.street
-        %td= address.house
-        %td= address.zipcode
-        %td= address.date
-
+    %tr(ng-repeat="address in addresses")
+      %td= '{{ address.address.id }}'
+      %td= '{{ address.address.country }}'
+      %td= '{{ address.address.city }}'
+      %td= '{{ address.address.street }}'
+      %td= '{{ address.address.house }}'
+      %td= '{{ address.address.zipcode }}'
+      %td= '{{ address.address.date }}'
 
 = paginate @addresses

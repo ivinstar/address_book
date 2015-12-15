@@ -5,8 +5,9 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body
+  %body(ng-app="addbookApp")
     .container
       = render 'layouts/partials/header'
 
-      = yield
+      .angular-container{"ng-controller" => (content_for?(:ng_controller) ? yield(:ng_controller) : nil), "entity-name" => (content_for?(:entity_name) ? yield(:entity_name) : nil)}
+        = yield

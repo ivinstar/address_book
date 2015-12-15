@@ -1,4 +1,19 @@
 en:
+  activerecord:
+    models:
+      address: 'Addresses'
+    attributes:
+      address:
+        id: 'ID'
+        country: 'Country'
+        city: 'City'
+        street: 'Street'
+        house: 'House'
+        zipcode: 'Zipcode'
+        date: 'Date'
+
+
+
   views:
     pagination:
       first: "&laquo;"

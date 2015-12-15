@@ -7,6 +7,12 @@ gem 'mini_portile', '~>0.5.3'
 gem 'nokogiri', '1.6.0'
 
 gem 'jquery-rails'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'angularjs-rails'
+gem 'angular-rails-templates'
+gem 'angular-ui-bootstrap-rails'
+gem 'rabl'
+
 gem 'haml-rails'
 gem "therubyracer"
 gem "less-rails"
@@ -14,5 +20,6 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 gem 'annotate'
 gem 'kaminari'
+gem 'ransack'
 
 

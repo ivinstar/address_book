@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :api do
-
+    resources :addresses
   end
 
   scope :module => :web do

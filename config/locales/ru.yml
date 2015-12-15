@@ -1,1 +1,13 @@
 ru:
+  activerecord:
+    models:
+      address: 'Адреса'
+    attributes:
+      address:
+        id: 'ID'
+        country: 'Страна'
+        city: 'Город'
+        street: 'Улица'
+        house: 'Дом'
+        zipcode: 'Индекс'
+        date: 'Дата'
