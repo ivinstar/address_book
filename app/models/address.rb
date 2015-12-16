@@ -25,4 +25,17 @@ class Address < ActiveRecord::Base
     self.updated_at.utc.strftime('%d.%m.%Y %H:%M')
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+      super + %w(street)
+  end
+
+  def self.ransackable_scopes(auth_object = nil)
+    %w(street_like)
+  end
+
+  scope :street_like, ->(val) {
+    where("street_name LIKE '%#{val}%' OR street_type LIKE '%#{val}%'")
+  }
+
+
 end

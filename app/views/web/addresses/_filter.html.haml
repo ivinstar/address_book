@@ -1,8 +1,16 @@
-%tr
-  %th
-  %th
-  %th
-  %th
-  %th
-  %th
-  %th
+%form
+  %tr
+    %td
+      %input(type="text" name="country_cont" ng-model="country_cont" ng-keyup="$event.keyCode == 13 ? search() : null"  placeholder="Search country...")
+      %a(ng-click="clean('country_cont')")
+        clear
+    %td
+      %input(type="text" name="city_cont" ng-model="city_cont" ng-keyup="$event.keyCode == 13 ? search() : null"  placeholder="Search city...")
+    %td
+      %input(type="text" name="street_like" ng-model="street_like" ng-keyup="$event.keyCode == 13 ? search() : null"  placeholder="Search street...")
+    %td
+      %input(type="text" name="house_eq" ng-model="house_eq" ng-keyup="$event.keyCode == 13 ? search() : null"  placeholder="Search house...")
+    %td
+      %input(type="text" name="zipcode_cont" ng-model="zipcode_cont" ng-keyup="$event.keyCode == 13 ? search() : null"  placeholder="Search zipcode...")
+    %td
+      %input(type="text" name="date_like" ng-model="date_like" ng-keyup="$event.keyCode == 13 ? search() : null"  placeholder="Search date...")

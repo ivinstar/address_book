@@ -1,7 +1,31 @@
 class Api::AddressesController < Api::ApplicationController
 
+  before_filter :sanitize_params, only: [:index]
+
   def index
-    @addresses = Address.limit(20)
+    @search = @model.search @q
+    @addresses = @search.result.limit(20)
+  end
+
+  private
+
+  def sanitize_params
+    @q = JSON.parse params[:q] || {}
+  end
+
+  def set_model
+    @model = Address
+  end
+
+  def permit_params
+    params.require(:address).permit(:country,
+                                    :city,
+                                    :street_name,
+                                    :street_type,
+                                    :house,
+                                    :zipcode,
+                                    :street,
+                                    :date)
   end
 
 end

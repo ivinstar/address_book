@@ -1,9 +1,8 @@
 class Web::AddressesController < Web::ApplicationController
 
-  before_filter :set_model, only: [:index]
-
   def index
-    @addresses = @model.page(params[:page]).per(30)
+    @search = @model.search {}
+    @addresses = @search.result.page(1).per(1)
   end
 
 

@@ -1,4 +1,5 @@
 - content_for :ng_controller, 'addressesCtrl'
+- content_for :ng_init, 'search()'
 
 = paginate @addresses
 
@@ -6,16 +7,18 @@
   %thead
     %tr
       %th
-      %th= @model.human_attribute_name(:country)
-      %th= @model.human_attribute_name(:city)
+        %a(href="#" ng-click="sort()" ng-model="address.country")
+          = @model.human_attribute_name(:country)
+      %th
+        %a(href="#city" ng-click="sort()" ng-model="city" class="sort_link")
+          = @model.human_attribute_name(:city)
       %th= @model.human_attribute_name(:street)
       %th= @model.human_attribute_name(:house)
       %th= @model.human_attribute_name(:zipcode)
       %th= @model.human_attribute_name(:date)
-    = render 'filter'
   %tbody
+    = render 'filter'
     %tr(ng-repeat="address in addresses")
-      %td= '{{ address.address.id }}'
       %td= '{{ address.address.country }}'
       %td= '{{ address.address.city }}'
       %td= '{{ address.address.street }}'
