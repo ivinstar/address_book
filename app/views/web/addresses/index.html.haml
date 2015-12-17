@@ -1,5 +1,5 @@
 - content_for :ng_controller, 'addressesCtrl'
-- content_for :ng_init, 'search()'
+- content_for :ng_init, 'doSearch()'
 
 = paginate @addresses
 
@@ -10,8 +10,9 @@
         %a(href="#" ng-click="sort()" ng-model="address.country")
           = @model.human_attribute_name(:country)
       %th
-        %a(href="#city" ng-click="sort()" ng-model="city" class="sort_link")
-          = @model.human_attribute_name(:city)
+        -#%a(href="#" ng-click="sort()" class="sort_link")
+        %input(ng-model="city_sort" name="city_sort" value="asc" type="text" ng-click="sort()")
+        -#= @model.human_attribute_name(:city)
       %th= @model.human_attribute_name(:street)
       %th= @model.human_attribute_name(:house)
       %th= @model.human_attribute_name(:zipcode)

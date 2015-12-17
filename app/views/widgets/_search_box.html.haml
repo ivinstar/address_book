@@ -1,0 +1,8 @@
+.form-group.search-box
+  %input.form-control.search-input{:type => type,
+                                   :name => field,
+                                   :placeholder => t("search.%s" % field),
+                                   'ng-model' => "search.%s" % field,
+                                   'ng-keyup' => "doEnter($event)" }
+  %span.form-control-clear{'ng-click' => "doReset('%s')" % field}
+    %i.fa.fa-times-circle-o

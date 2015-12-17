@@ -21,3 +21,12 @@ en:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "&hellip;"
+
+
+  search:
+    country_cont: 'Search country...'
+    city_cont: 'Search city...'
+    street_like: 'Search street...'
+    house_eq: 'Search house...'
+    zipcode_cont: 'Search zipcode...'
+    date_like: 'Search date...'

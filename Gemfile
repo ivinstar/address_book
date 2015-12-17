@@ -17,9 +17,11 @@ gem 'haml-rails'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'font-awesome-rails'
 
 gem 'annotate'
 gem 'kaminari'
 gem 'ransack'
+gem 'action_widget'
 
 
