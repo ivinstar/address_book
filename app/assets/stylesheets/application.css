@@ -21,6 +21,14 @@
     color: #ccc;
 }
 
+.form-control-clear.empty {
+    display:none;
+}
+
+.form-control-clear.clear {
+    display:block;
+}
+
 .form-control-clear:hover {
     color: #000;
 }
@@ -29,6 +37,27 @@
     position: relative;
     width: 250px;
     height: 32px;
+}
+
+.sort_link {
+    cursor: pointer;
+    color: #0088cc;
+}
+
+.sort_link.asc:after {
+    font-family: 'FontAwesome';
+    content: "\f0de";
+    position: relative;
+    top: 4px;
+    left: 8px;
+}
+
+.sort_link.desc:after {
+    font-family: 'FontAwesome';
+    content: "\f0dd";
+    position: relative;
+    top: -1px;
+    left: 8px;
 }
 
 

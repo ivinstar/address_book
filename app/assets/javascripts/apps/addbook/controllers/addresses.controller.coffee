@@ -1,30 +1,32 @@
 addbookApp.controller 'addressesCtrl', ($scope, $attrs, Address) ->
   $scope.search = {}
-  $scope.params = {}
-  $scope.params.q = {}
+  $scope.sort = {}
+  $scope.params = { q : {} }
 
   $scope.collection = () ->
     $scope.addresses = Address.query($scope.params)
 
 
   $scope.doSearch = () ->
-    $scope.params.q.city_cont = $scope.search.city_cont
-    $scope.params.q.house_eq = $scope.search.house_eq
-    $scope.params.q.street_like = $scope.search.street_like
-    $scope.params.q.zipcode_cont = $scope.search.zipcode_cont
-    $scope.params.q.country_cont = $scope.search.country_cont
+    for i,j of $scope.search
+      $scope.params.q[i] = j
     this.collection()
 
 
-  $scope.doSort = () ->
-    console.log($scope.city_sort)
-    #params.q.s = 'city asc'
-    #this.collection()
+  $scope.doSort = (field) ->
+    direction = switch $scope.sort.direction
+      when undefined then 'asc'
+      when 'asc' then 'desc'
+      when 'desc' then 'asc'
+    $scope.sort.direction = direction
+    #$scope.sort['sort_field'] = field
+    $scope.params.q.s = [field,direction].join(' ')
+    this.collection()
 
 
   $scope.doReset = (field) ->
     $scope.params.q[field] = null
-    $scope['search'][field] = null
+    $scope.search[field] = null
     this.collection()
 
 

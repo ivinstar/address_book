@@ -1,8 +1,8 @@
 %form
   %tr
-    %td= search_box_widget field: 'country_cont'
-    %td= search_box_widget field: 'city_cont'
-    %td= search_box_widget field: 'street_like'
-    %td= search_box_widget field: 'house_eq'
-    %td= search_box_widget field: 'zipcode_cont'
-    %td= search_box_widget field: 'date_like'
+    %td= search_box_widget field: :country
+    %td= search_box_widget field: :city
+    %td= search_box_widget field: :street, cond: 'like'
+    %td= search_box_widget field: :house, cond: 'eq'
+    %td= search_box_widget field: :zipcode
+    %td= search_box_widget field: :date, cond: 'like'

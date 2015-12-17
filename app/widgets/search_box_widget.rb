@@ -8,6 +8,10 @@ class SearchBoxWidget < BaseWidget
            :converts => :to_s,
            :default => 'text'
 
+  property :cond,
+           :converts => :to_s,
+           :default => 'cont'
+
 
   def render
     render_view build_params
@@ -17,8 +21,13 @@ class SearchBoxWidget < BaseWidget
 
   private
 
+  def search_field
+    [field,cond].join('_')
+  end
+
   def build_params
     {
+        search_field: search_field,
         field: field,
         type: type
     }

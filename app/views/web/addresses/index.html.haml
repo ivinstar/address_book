@@ -6,17 +6,12 @@
 %table.table.table-bordered.table-striped
   %thead
     %tr
-      %th
-        %a(href="#" ng-click="sort()" ng-model="address.country")
-          = @model.human_attribute_name(:country)
-      %th
-        -#%a(href="#" ng-click="sort()" class="sort_link")
-        %input(ng-model="city_sort" name="city_sort" value="asc" type="text" ng-click="sort()")
-        -#= @model.human_attribute_name(:city)
-      %th= @model.human_attribute_name(:street)
-      %th= @model.human_attribute_name(:house)
-      %th= @model.human_attribute_name(:zipcode)
-      %th= @model.human_attribute_name(:date)
+      %th= sort_link_widget field: :country
+      %th= sort_link_widget field: :city
+      %th= sort_link_widget field: :street
+      %th= sort_link_widget field: :house
+      %th= sort_link_widget field: :zipcode
+      %th= sort_link_widget field: :date
   %tbody
     = render 'filter'
     %tr(ng-repeat="address in addresses")
