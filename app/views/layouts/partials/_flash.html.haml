@@ -1,0 +1,8 @@
+- flash.each do |type, msg|
+  %div{:class => "alert alert-#{type}"}
+    = link_to '×', '#', class: 'close', title: t(:close), data: {dismiss: 'alert'}
+    - if msg.is_a?(Array)
+      - msg.each do |m|
+        %span= m
+    - else
+      = msg

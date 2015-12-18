@@ -60,4 +60,13 @@
     left: 8px;
 }
 
+.alert.alert-error span {
+    display: block;
+}
+
+.error {
+    display: none;
+}
+
+
 

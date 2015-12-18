@@ -1,0 +1,10 @@
+= simple_form_for @address do |f|
+  = f.input :country, as: :string
+  = f.input :city
+  = f.input :street_name
+  = f.input :street_type
+  = f.input :house
+  = f.input :zipcode
+  = f.input :updated_at
+  = f.submit t(:save), class: 'btn btn-success'
+  = link_to t(:cancel), addresses_path, class: 'btn'

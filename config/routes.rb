@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   scope :module => :web do
     root to: 'addresses#index'
 
-    #resources :addresses
+    resources :addresses
   end
 
 end

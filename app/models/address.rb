@@ -16,6 +16,13 @@
 class Address < ActiveRecord::Base
   include GeneralRepository
 
+  validates :country, :city, :street_name, :street_type, :house, presence: true
+  validates :house, numericality: { greater_than: 0 }
+
+
+  def to_s
+    [self.street,self.house].join(', ')
+  end
 
   def street
     [self.street_name,self.street_type].join(', ')
@@ -34,7 +41,8 @@ class Address < ActiveRecord::Base
   end
 
   scope :street_like, ->(val) {
-    where("street_name LIKE '%#{val}%' OR street_type LIKE '%#{val}%'")
+    val = val.split(/\s|,/).join('%')
+    where("street_name LIKE '#{val}%' OR street_type LIKE '#{val}%' OR CONCAT(street_name, street_type) LIKE '#{val}%'")
   }
 
 

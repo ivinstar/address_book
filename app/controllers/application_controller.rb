@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_action :set_model, only: [:index]
+  before_action :set_model
 
 
   private

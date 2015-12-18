@@ -11,7 +11,21 @@ en:
         house: 'House'
         zipcode: 'Zipcode'
         date: 'Date'
+        updated_at: 'Date'
 
+  search:
+    field: 'Search %s...'
+
+  title: 'Address book'
+  new: 'Add'
+  edit: 'Edit'
+  delete: 'Delete'
+  close: 'Close'
+  save: 'Save'
+  cancel: 'Cancel'
+  row_deleted: 'Address has been deleted successfully'
+  row_created: 'Address has been created successfully'
+  row_updated: 'Address has been updated successfully'
 
 
   views:
@@ -21,7 +35,3 @@ en:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "&hellip;"
-
-
-  search:
-    field: 'Search %s...'

@@ -23,5 +23,7 @@ gem 'annotate'
 gem 'kaminari'
 gem 'ransack'
 gem 'action_widget'
+gem 'simple_form'
+gem 'breadcrumbs_on_rails'
 
 

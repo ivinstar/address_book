@@ -1,30 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def generate_zipcode
-  charset = %w{1 2 3 4 5 6 7 8 9 0}
+  charset = %w{1 2 3 4 5 6 7 8 9}
   (0..6).map{ charset.to_a[rand(charset.size)] }.join
 end
 
+def time_rand from = (Time.now - 30.days), to = Time.now
+  Time.at(from + rand * (to.to_f - from.to_f))
+end
 
-country = 'Россия'
+
+country = ['Россия', 'Украина']
 city = ['Ульяновск', 'Москва', 'Санкт-Петербург', 'Казань', 'Самара']
 street_type = ['улица','проспект','переулок']
 street_name = ['1 Мая','100-летия со дня рождения В. И. Ленина','12 Сентября','3 Интернационала','30-летия Победы','Амбулаторный','Амурская','Ангарская','Анненково','Аношина','Антонова','Белова','Беляева','Беляева','Береговая','Береговой','Верхнечасовенный','Весенняя','Ветеринарная','Гастелло','Гражданская','Грибоедова','Гусева','Дружная','Дубовский','Дубравный','Еланский','Енисейская','Ефремова','Жасминная','Железной Дивизии','Жигулевская','Жиркевича','Западный Пригород','Заречная','Защитников Отечества','Звездная','Зеленая','Интернациональная','Ипподромная','Калнина','Камышинская','Каравко','Куйбышева','Кулибина','Кутузова','Ленина','Ленинградская','Малиновый','Малосаратовская','Мелекесская','Молочный','Моряков','Московская','Московское','Мостовская','Национальный','Неверова','Невского','Некрасова','Немировича-Данченко','Нефтяников','Октябрьская','Октябрьский','Олега Кошевого','Островского','Отрадная','Отрадный','Офицерская','Охотничий','Пионерская','Пластова','Плеханова','Победы','Призовая','Приречная','Проездной','Пушкарева','Пушкинская','Ростовская','Рузаевский','Рылеева','Рылеева']
 
 c = 0
-(1..1000000).each do |i|
-  Address.create!({country: country,
+(1..500000).each do |i|
+  Address.create!({country: country.sample,
                    city: city.sample,
                    house: rand(1..100),
                    street_name: street_name.sample,
                    street_type: street_type.sample,
-                   zipcode: generate_zipcode
+                   zipcode: generate_zipcode,
+                   updated_at: time_rand,
+                   created_at: Time.now - 30.days
                   })
   c += 1
 end

@@ -11,7 +11,19 @@ ru:
         house: 'Дом'
         zipcode: 'Индекс'
         date: 'Дата'
-
+        updated_at: 'Дата'
 
   search:
     field: "Поиск %s..."
+
+  title: 'Адресная книга'
+  new: 'Добавить'
+  edit: 'Редактировать'
+  delete: 'Удалить'
+  close: 'Закрыть'
+  save: 'Сохранить'
+  cancel: 'Отменить'
+  row_deleted: 'Адрес успешно удален'
+  row_created: 'Адрес успешно создан'
+  row_updated: 'Адрес успешно изменен'
+
