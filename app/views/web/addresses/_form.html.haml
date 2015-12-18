@@ -7,6 +7,6 @@
   = f.input :street_type
   = f.input :house
   = f.input :zipcode
-  = f.input :updated_at
+  -#= f.input :updated_at, as: :date_picker
   = f.submit t(:save), class: 'btn btn-success'
   = link_to t(:cancel), addresses_path, class: 'btn'

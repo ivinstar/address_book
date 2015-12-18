@@ -8,6 +8,8 @@ ru:
         country: 'Страна'
         city: 'Город'
         street: 'Улица'
+        street_name: 'Название улицы'
+        street_type: 'Тип'
         house: 'Дом'
         zipcode: 'Индекс'
         date: 'Дата'
@@ -26,4 +28,21 @@ ru:
   row_deleted: 'Адрес успешно удален'
   row_created: 'Адрес успешно создан'
   row_updated: 'Адрес успешно изменен'
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+
+  datetime:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+      js: 'DD-MM-YYYY hh:ii'
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      js: 'DD-MM-YYYY'
 

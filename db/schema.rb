@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209092343) do
+ActiveRecord::Schema.define(version: 20151218122903) do
 
   create_table "addresses", force: true do |t|
     t.string   "country"
@@ -23,5 +23,8 @@ ActiveRecord::Schema.define(version: 20151209092343) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "addresses", ["street_name", "street_type"], name: "index_addresses_on_street_name_and_street_type", using: :btree
+  add_index "addresses", ["zipcode"], name: "index_addresses_on_zipcode", using: :btree
 
 end

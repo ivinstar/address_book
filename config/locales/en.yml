@@ -8,6 +8,8 @@ en:
         country: 'Country'
         city: 'City'
         street: 'Street'
+        street_name: 'Street name'
+        street_type: 'Type'
         house: 'House'
         zipcode: 'Zipcode'
         date: 'Date'
@@ -35,3 +37,12 @@ en:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "&hellip;"
+
+  datetime:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+      js: 'DD-MM-YYYY hh:ii'
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      js: 'DD-MM-YYYY'

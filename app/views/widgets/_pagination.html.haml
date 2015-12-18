@@ -5,13 +5,13 @@
     %li(ng-if="page.current > 1")
       = link_to t('views.pagination.previous').html_safe, '', 'ng-click' => "doPage(page.current - 1)"
     %li.page.gap.disabled(ng-if="page.current > 3")
-      = link_to t('views.pagination.truncate').html_safe, '#'
+      = link_to t('views.pagination.truncate').html_safe, ''
 
     %li(ng-class="{ 'active': page.current == item }" ng-repeat="item in page.range")
       = link_to '{{item}}', '#', 'ng-click' => "doPage(item)"
 
     %li.page.gap.disabled(ng-if="page.current < #{pages}")
-      = link_to t('views.pagination.truncate').html_safe, '#'
+      = link_to t('views.pagination.truncate').html_safe, ''
     %li
       = link_to t('views.pagination.next').html_safe, '', 'ng-click' => "doPage(page.current + 1)"
     %li

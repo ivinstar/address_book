@@ -1,4 +1,4 @@
 %span.sort_link{'ng-click' => "doSort('%s')" % field,
                 'data-direction' => "{{sort.direction}}",
-                :class => "{{sort.direction}}"}
+                'ng-class' => "{'asc': (sort.current === '#{field}' && sort.direction === 'asc'), 'desc': (sort.current === '#{field}' && sort.direction === 'desc') }"}
   = model.human_attribute_name(field)

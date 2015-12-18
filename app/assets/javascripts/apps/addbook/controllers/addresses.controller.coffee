@@ -1,6 +1,6 @@
 addbookApp.controller 'addressesCtrl', ($scope, $attrs, Address) ->
   $scope.search = {}
-  $scope.sort = {}
+  $scope.sort = {current:null}
   $scope.page = {current:1,active:false}
   $scope.params = { q : {} }
 
@@ -21,6 +21,7 @@ addbookApp.controller 'addressesCtrl', ($scope, $attrs, Address) ->
     direction = if $scope.sort.direction == 'asc' then 'desc' else 'asc'
     $scope.sort.direction = direction
     $scope.params.q.s = [field,direction].join(' ')
+    $scope.sort.current = field
     this.collection()
 
 

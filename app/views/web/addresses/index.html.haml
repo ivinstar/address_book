@@ -13,7 +13,7 @@
       %th= sort_link_widget field: :street
       %th= sort_link_widget field: :house
       %th= sort_link_widget field: :zipcode
-      %th= sort_link_widget field: :date
+      -#%th= sort_link_widget field: :date
       %th
   %tbody
     = render 'filter'
@@ -23,7 +23,7 @@
       %td= '{{ address.address.street }}'
       %td= '{{ address.address.house }}'
       %td= '{{ address.address.zipcode }}'
-      %td= '{{ address.address.date }}'
+      -#%td= '{{ address.address.date }}'
       %td
         %a{:href => '/addresses/{{ address.address.id }}/edit', :title => t(:edit)}
           %i.fa.fa-pencil-square-o
