@@ -9,6 +9,7 @@ def time_rand from = (Time.now - 30.days), to = Time.now
 end
 
 
+=begin
 country = ['Россия', 'Украина']
 city = ['Ульяновск', 'Москва', 'Санкт-Петербург', 'Казань', 'Самара']
 street_type = ['улица','проспект','переулок']
@@ -28,6 +29,7 @@ c = 0
   c += 1
 end
 puts "#{c} addresses created"
+=end
 
 
 
