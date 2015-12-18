@@ -3,3 +3,8 @@
     .navbar-inner
       .container-fluid
         = link_to t(:title), root_path, class: 'brand'
+
+        -#%form(ng-controller='langCtrl')
+          %select(ng-change="ngChangeLang()" ng-model="selectedLang")
+            %option(ng-repeat="lang in languages" ng-selected="selectedLang == lang")
+              {{lang}}

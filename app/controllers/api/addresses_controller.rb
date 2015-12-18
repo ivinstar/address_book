@@ -4,7 +4,7 @@ class Api::AddressesController < Api::ApplicationController
 
   def index
     @search = @model.search @q
-    @addresses = @search.result.limit(20)
+    @addresses = @search.result.page(params[:page] || 1)
   end
 
   private

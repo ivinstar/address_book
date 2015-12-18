@@ -16,6 +16,8 @@
 class Address < ActiveRecord::Base
   include GeneralRepository
 
+  paginates_per 30
+
   validates :country, :city, :street_name, :street_type, :house, presence: true
   validates :house, numericality: { greater_than: 0 }
 

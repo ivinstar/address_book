@@ -68,5 +68,8 @@
     display: none;
 }
 
-
-
+.pagination span {
+    position: relative;
+    top: -11px;
+    left: 12px;
+}

@@ -11,9 +11,10 @@
 
       .angular-container{"ng-controller" => (content_for?(:ng_controller) ? yield(:ng_controller) : nil), "ng-init" => (content_for?(:ng_init) ? yield(:ng_init) : nil)}
 
-        = render 'layouts/partials/breadcrumbs'
-
         = render 'layouts/partials/flash'
+
+        .loading(ng-show="loading")
+          -#= 'loading...'
 
         = yield
 

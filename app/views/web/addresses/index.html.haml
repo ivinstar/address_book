@@ -3,7 +3,7 @@
 
 = link_to t(:new), new_address_path, class: 'btn btn-primary'
 
-= paginate @addresses
+= pagination_widget
 
 %table.table.table-bordered.table-striped
   %thead
@@ -30,4 +30,4 @@
         %a{:href => '/addresses/{{ address.address.id }}', :title => t(:delete), 'data-method' => :delete}
           %i.fa.fa-trash-o
 
-= paginate @addresses
+= pagination_widget
