@@ -12,6 +12,10 @@ class SearchBoxWidget < BaseWidget
            :converts => :to_s,
            :default => 'cont'
 
+  property :css_class,
+           :converts => :to_s,
+           :default => ''
+
 
   def render
     render_view build_params
@@ -29,8 +33,13 @@ class SearchBoxWidget < BaseWidget
     {
         search_field: search_field,
         field: field,
-        type: type
+        type: type,
+        css_class: set_class
     }
+  end
+
+  def set_class
+    css_class
   end
 
 

@@ -3,7 +3,8 @@
                                    :name => search_field,
                                    :placeholder => t("search.field") % field,
                                    'ng-model' => "search.%s" % search_field,
-                                   'ng-keyup' => "doEnter($event)" }
+                                   'ng-keyup' => "doEnter($event)",
+                                   :class => css_class }
   %span.form-control-clear{'ng-click' => "doReset('%s')" % search_field,
                            'ng-class' => 'clear'}
     %i.fa.fa-times-circle-o

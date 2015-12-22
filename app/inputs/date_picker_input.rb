@@ -5,7 +5,7 @@ class DatePickerInput < SimpleForm::Inputs::Base
   end
 
   def input_html_options
-    { class: 'datepicker-input', data: { type: 'datetime' } }
+    { class: 'datepicker' }
   end
 
 end

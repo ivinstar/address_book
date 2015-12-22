@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require bootstrap-datepicker
 //= require angular
 //= require angular-animate
 //= require angular-rails-templates

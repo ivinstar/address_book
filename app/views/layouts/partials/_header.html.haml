@@ -4,7 +4,8 @@
       .container-fluid
         = link_to t(:title), root_path, class: 'brand'
 
-        -#%form(ng-controller='langCtrl')
-          %select(ng-change="ngChangeLang()" ng-model="selectedLang")
-            %option(ng-repeat="lang in languages" ng-selected="selectedLang == lang")
-              {{lang}}
+        -#%div(ng-controller='langCtrl')
+          %form
+            %select(ng-model="lang.langSelector" ng-change="ngChangeLang()" name="langSelector" ng-init="lang.langSelector='ru'")
+              %option(ng-repeat="lang in lang.languages")
+                {{lang}}

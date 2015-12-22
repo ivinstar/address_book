@@ -31,7 +31,7 @@ class Address < ActiveRecord::Base
   end
 
   def date
-    self.updated_at.utc.strftime('%d.%m.%Y %H:%M')
+    self.updated_at.utc.strftime('%d.%m.%Y')
   end
 
   def self.ransackable_attributes(auth_object = nil)
